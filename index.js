@@ -29,7 +29,12 @@ rl.on("SIGINT", () => {
         }
 	})
 })
+// if (argv.run == undefined && argv.interactive == false) {
 
+// }
+if (argv.run) {
+
+}
 if (argv.interactive) {
     rl.on("line", (line) => {
         let command = line.split(" ")[0]
@@ -50,4 +55,6 @@ if (argv.interactive) {
 
         }
     })
+} else {
+    process.exit(0)
 }
