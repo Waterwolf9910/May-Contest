@@ -63,3 +63,36 @@ const argv = yarg.option("string", {
 // console.log(bigest)
 // console.log(smallest)
 
+// let num = parseInt(argv.string)
+// let x = 0
+// for (let i = 0; i < num ; i++) {
+//     x = x+(i+1)
+// }
+// console.log(x)
+
+// const moment = require("moment")
+// function countLeaps (start, end = moment().year()) {
+//     if (typeof start !== "string" || typeof start !== "number")
+//         if (start > end) {
+//             throw new SyntaxError(`start cannot get greater than end. { start: ${start}, end: ${end}}`)
+//         }
+//     let year
+//     if (parseInt(start) < 10) {
+//         year = `000${parseInt(start)}`
+//     } else if (parseInt(start) < 100) {
+//         year = `00${parseInt(start)}`
+//     } else if (parseInt(start) < 1000) {
+//         year = `0${parseInt(start)}`
+//     } else {
+//         year = parseInt(start)
+//     }
+//     let leaps = 0
+//     while (year < parseInt(end)) {
+//         if (moment(`${year}`).isLeapYear()) {
+//             leaps++
+//         }
+//         year++
+//     }
+//     return leaps
+// }
+console.log(require("./counting-leaps").countLeaps("2012"))

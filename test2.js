@@ -4,3 +4,4 @@
 
 // console.log(chars.getAmount())
 // console.log(chars.most_common())
+console.log(require("./n-factorial").nFractorial(10))

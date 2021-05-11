@@ -1,3 +1,4 @@
+// @ts-check
 class CommonChars {
     /**
      * 
@@ -15,6 +16,7 @@ class CommonChars {
     getAmount() {
         let string = this.str
         let data = {}
+        // @ts-ignore
         for (let i in string) {
             let current = string[i];
             if (isNaN(data[current])) {

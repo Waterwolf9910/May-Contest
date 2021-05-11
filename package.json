@@ -9,12 +9,16 @@
     "@types/yargs": "^16.0.1",
     "@typescript-eslint/eslint-plugin": "^4.22.1",
     "@typescript-eslint/parser": "^4.22.1",
-    "eslint": "^7.26.0"
+    "eslint": "^7.26.0",
+    "pkg": "^5.1.0"
   },
   "dependencies": {
+    "moment": "^2.29.1",
     "yargs": "^17.0.1"
   },
-  "engines": {"node": ">=15.0.0"},
+  "engines": {
+    "node": ">=15.0.0"
+  },
   "scripts": {
     "get-commits": "yarn exec git show > commits.txt"
   }
