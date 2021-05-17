@@ -4,11 +4,13 @@ class CommonChars {
      * 
      * @param {string} string - The String to gather chars from
      */
-    constructor(string) {
+    constructor(string, verb_num = 0, jsonFormat = false) {
         if (!(typeof string == "string")) {
             throw new TypeError(`${string}`)
-        } 
+        }
         this.str = string
+        this.verb = verb_num
+        this.json = jsonFormat
     }
     /**
      * @returns - Returns a object with amount of characters attached
@@ -23,8 +25,11 @@ class CommonChars {
                 data[current] = 1
             }
             else {
-                data[current] = data[current] + 1
+                data[current] += 1
             }
+        }
+        if (this.verb > 0) {
+            console.log(`Character Amounts ${data}`)
         }
         return data
     }
@@ -43,6 +48,9 @@ class CommonChars {
                 } else {
                     bigest = { data: `${i}: ${data[i]}` }
                 }
+                if (this.verb > 1) {
+                    console.log(`Found new char { now: ${i}, amount: ${data[i]} }`)
+                }
                 lastBig = data[i]
             } else if (data[i] == lastBig) {
                 if (i == " ") {
@@ -50,10 +58,16 @@ class CommonChars {
                 } else {
                     bigest = { data: bigest.data + ` & ${i}: ${data[i]}` }
                 }
+                if (this.verb > 1) {
+                    console.log(`Found another char { now: ${i}, amount: ${data[i]} }`)
+                }
             }
         }
-
-        return bigest
+        if (this.json) {
+            return `{ "data": "${bigest.data}"}`
+        } else {
+            return bigest.data
+        }
     }
     /**
      * @returns - Returns a object with the least common char(s) in {string}
@@ -70,6 +84,9 @@ class CommonChars {
                 } else {
                     smallest = { data: `${i}: ${data[i]}` }
                 }
+                if (this.verb > 1) {
+                    console.log(`Found new char { now: ${i}, amount: ${data[i]} }`)
+                }
                 lastSmall = data[i]
             } else if (data[i] == lastSmall) {
                 if (i == " ") {
@@ -77,10 +94,16 @@ class CommonChars {
                 } else {
                     smallest = { data: smallest.data + ` & ${i}: ${data[i]}` }
                 }
+                if (this.verb > 1) {
+                    console.log(`Found new char { now: ${i}, amount: ${data[i]} }`)
+                }
             }
         }
-
-        return smallest
+        if (this.json) {
+            return `{ "data": "${smallest.data}"}`
+        } else {
+            return smallest.data
+        }
     }
 }
 

@@ -19,6 +19,11 @@
   "engines": {
     "node": ">=15.0.0"
   },
+  "bin": "index.js",
+  "pkg": {
+    "targets": ["node16-linux-x64"],
+    "outputPath": "builds"
+  },
   "scripts": {
     "get-commits": "yarn exec git show > commits.txt"
   }

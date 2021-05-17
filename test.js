@@ -4,7 +4,7 @@ const { hideBin } = require("yargs/helpers")
 const yarg = yargs(hideBin(process.argv))
 const argv = yarg.option("string", {
     alias: "s",
-    string: true
+    array: true
 }).argv
 // const cp = require("./test2")
 // console.log(argv.run)
@@ -95,4 +95,5 @@ const argv = yarg.option("string", {
 //     }
 //     return leaps
 // }
-console.log(require("./counting-leaps").countLeaps("2012"))
+//console.log(require("./counting-leaps").countLeaps("2012", "2016"))
+console.log(require("./n-factorial").nFractorial(argv.string))
