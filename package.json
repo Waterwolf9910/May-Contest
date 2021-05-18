@@ -21,7 +21,7 @@
   },
   "bin": "index.js",
   "pkg": {
-    "targets": ["node16-linux-x64"],
+    "targets": ["node16-linux-x64", "node16-macos-x64", "node16-win-x64"],
     "outputPath": "builds"
   },
   "scripts": {
